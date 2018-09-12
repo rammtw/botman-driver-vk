@@ -58,15 +58,15 @@ class VkDriver extends HttpDriver implements VerifiesService
      */
     public function getMessages()
     {
-        if ($this->payload->get('type') === self::MESSAGE_NEW_EVENT || $this->payload->get('type') === self::MESSAGE_EDIT_EVENT) {
-            $this->messages = [
-                new IncomingMessage($this->event->get('text'), $this->event->get('from_id'),
-                    $this->payload->get('group_id'), $this->event)
-            ];
-        }
 
-        if (count($this->messages) === 0) {
-            $this->messages = [new IncomingMessage('', '', '')];
+        if (empty($this->messages)){
+            if ($this->payload->get('type') === self::MESSAGE_NEW_EVENT || $this->payload->get('type') === self::MESSAGE_EDIT_EVENT) {
+                $this->messages = [
+                    new IncomingMessage($this->event->get('text'), $this->event->get('from_id'),
+                        $this->payload->get('group_id'), $this->event)
+                ];
+                echo 'ok';
+            }
         }
 
         return $this->messages;
