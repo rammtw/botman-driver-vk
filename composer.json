@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "BotMan\\Drivers\\VK\\": "src/"
+            "Eisenest\\Drivers\\VK\\": "src/"
         }
     },
     "autoload-dev": {
@@ -43,7 +43,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "BotMan\\Drivers\\VK\\Providers\\VKServiceProvider"
+                "Eisenest\\Drivers\\VK\\Providers\\VKServiceProvider"
             ]
         }
     }

@@ -3,6 +3,6 @@
     "stubs/vk.php"
   ],
   "botman/driver": [
-    "BotMan\\Drivers\\VK\\VkDriver"
+    "Eisenest\\Drivers\\VK\\VkDriver"
   ]
 }
