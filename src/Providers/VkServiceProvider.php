@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use BotMan\BotMan\Drivers\DriverManager;
 use BotMan\Studio\Providers\StudioServiceProvider;
 
-class VkServiceProvider extends ServiceProvider
+class VKServiceProvider extends ServiceProvider
 {
     public function boot()
     {
