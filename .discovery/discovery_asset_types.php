@@ -17,7 +17,7 @@ return array (
   array (
     0 => 
     array (
-      'value' => 'Eisenest\\Drivers\\VK\\VkDriver',
+      'value' => 'BotMan\\Drivers\\VK\\VkDriver',
       'package' => 'iboldurev/botman-driver-vk',
       'packageDir' => './',
       'priority' => 0.0,

@@ -6,6 +6,6 @@ return array (
   ),
   'botman/driver' => 
   array (
-    0 => 'Eisenest\\Drivers\\VK\\VkDriver',
+    0 => 'BotMan\\Drivers\\VK\\VkDriver',
   ),
 );
