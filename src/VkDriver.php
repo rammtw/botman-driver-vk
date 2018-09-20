@@ -25,11 +25,13 @@ class VkDriver extends HttpDriver implements VerifiesService
     const CONFIRMATION_EVENT = 'confirmation';
     const MESSAGE_EDIT_EVENT = 'message_edit';
     const MESSAGE_NEW_EVENT = 'message_new';
+    const GROUP_JOIN_EVENT = 'group_join';
 
     const EVENTS = [
         'confirmation',
         'message_edit',
         'message_new',
+        'group_join',
     ];
 
     protected $endpoint = 'messages.send';
@@ -63,6 +65,15 @@ class VkDriver extends HttpDriver implements VerifiesService
             if ($this->payload->get('type') === self::MESSAGE_NEW_EVENT || $this->payload->get('type') === self::MESSAGE_EDIT_EVENT) {
                 $this->messages = [
                     new IncomingMessage($this->event->get('text'), $this->event->get('from_id'),
+                        $this->payload->get('group_id'), $this->event)
+                ];
+                echo 'ok';
+            }
+
+            if ($this->payload->get('type') === self::GROUP_JOIN_EVENT) {
+                Log::info(print_r($this->event, true));
+                $this->messages = [
+                    new IncomingMessage('/group_join_vk', $this->event->get('user_id'),
                         $this->payload->get('group_id'), $this->event)
                 ];
                 echo 'ok';
