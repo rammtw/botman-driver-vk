@@ -48,7 +48,7 @@ class Keyboard
             'keyboard' => json_encode(Collection::make([
                 'one_time' => $this->oneTimeKeyboard,
                 'buttons' => $this->rows
-            ])),
+            ]), JSON_UNESCAPED_UNICODE),
         ];
     }
 }
