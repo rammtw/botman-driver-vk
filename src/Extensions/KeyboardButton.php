@@ -31,40 +31,31 @@ class KeyboardButton implements \JsonSerializable
 
     /**
      * @param $label
+     * @param array $payload
      * @return KeyboardButton
      */
-    public static function create($label)
+    public static function create($label, array $payload)
     {
-        return new self($label);
+        return new self($label, $payload);
     }
 
     /**
      * KeyboardButton constructor.
      * @param $label
      */
-    public function __construct($label)
+    public function __construct($label, array $payload)
     {
         $this->label = $label;
-    }
-
-    /**
-     * @param $text
-     * @return $this
-     */
-    public function text($text)
-    {
-        $this->text = $text;
-
-        return $this;
-    }
-
-    /**
-     * @param array $payload
-     * @return $this
-     */
-    public function payload(array $payload)
-    {
         $this->payload = json_encode($payload);
+    }
+
+    /**
+     * @param $type
+     * @return $this
+     */
+    public function type($type)
+    {
+        $this->type = $type;
 
         return $this;
     }

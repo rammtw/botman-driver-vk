@@ -10,7 +10,6 @@ use Illuminate\Support\Collection;
 class Keyboard
 {
     protected $oneTimeKeyboard = false;
-    protected $resizeKeyboard = false;
 
     /**
      * @var array
@@ -24,17 +23,6 @@ class Keyboard
     public function oneTimeKeyboard($active = true)
     {
         $this->oneTimeKeyboard = $active;
-
-        return $this;
-    }
-
-    /**
-     * @param bool $active
-     * @return $this
-     */
-    public function resizeKeyboard($active = true)
-    {
-        $this->resizeKeyboard = $active;
 
         return $this;
     }
